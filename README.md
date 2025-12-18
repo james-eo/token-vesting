@@ -1,88 +1,213 @@
-# token-vesting
+# Token Vesting Platform
 
-This is a Next.js app containing:
+A decentralized token vesting platform built on Solana that enables companies to create and manage token vesting schedules for team members, advisors, and investors. The platform provides secure, transparent, and automated token distribution with customizable vesting periods and cliff periods.
 
-- Tailwind CSS setup for styling
-- Useful wallet UI elements setup using [@solana/web3.js](https://www.npmjs.com/package/@solana/web3.js)
-- A basic Vesting Solana program written in Anchor
-- UI components for interacting with the Vesting program
+## 🌟 Features
+
+- **Create Vesting Accounts**: Set up company vesting accounts with custom token mints
+- **Employee Vesting Schedules**: Define vesting schedules with start time, end time, cliff periods, and total allocations
+- **Automated Token Release**: Smart contracts automatically calculate and release vested tokens based on linear vesting schedules
+- **Transparent On-Chain**: All vesting schedules are verifiable on the Solana blockchain
+- **Mobile Wallet Support**: Connect using mobile wallets like Phantom Mobile and Solflare Mobile
+- **Modern UI**: Sleek and responsive interface built with Next.js and Tailwind CSS
+
+## 🏗️ Architecture
+
+### Smart Contract (Anchor Program)
+
+The vesting program consists of three main instructions:
+
+1. **Create Vesting Account**: Initializes a company vesting account with a treasury
+2. **Create Employee Account**: Sets up individual vesting schedules for beneficiaries
+3. **Claim Tokens**: Allows employees to claim their vested tokens as they unlock
+
+**Key Features:**
+- Program-Derived Addresses (PDAs) for secure token custody
+- Linear vesting calculation with cliff period support
+- Overflow-safe arithmetic operations
+- Comprehensive error handling
+
+### Frontend (Next.js App)
+
+- Built with Next.js 15 and React 19
+- Styled with Tailwind CSS v4
+- Wallet integration using Solana Wallet Adapter
+- Mobile-first responsive design
+- Dark mode support
+
+## 📋 Prerequisites
+
+- Node.js 18+ or Bun
+- Yarn or npm
+- Rust and Anchor CLI (for smart contract development)
+- Solana CLI tools
 
 ## Getting Started
 
 ### Installation
 
-#### Download the template
+Clone the repository:
 
 ```shell
-pnpm create solana-dapp@latest -t gh:solana-foundation/templates/web3js/token-vesting
+git clone https://github.com/james-eo/token-vesting.git
+cd token-vesting
 ```
 
-#### Install Dependencies
+Install dependencies:
 
 ```shell
-pnpm install
+yarn install
 ```
 
-## Apps
+## 🚀 Development
 
-### anchor
+### Smart Contract (Anchor Program)
 
-This is a Solana program written in Rust using the Anchor framework.
-
-#### Commands
-
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the
-command with `pnpm`, eg: `pnpm anchor`.
-
-#### Sync the program id:
-
-Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the
-Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
-
-You will manually need to update the constant in `anchor/lib/Vesting-exports.ts` to match the new program id.
-
-```shell
-pnpm anchor keys sync
-```
+Navigate to the anchor directory for all Anchor commands, or use the provided scripts.
 
 #### Build the program:
 
 ```shell
-pnpm anchor-build
+yarn anchor-build
 ```
 
 #### Start the test validator with the program deployed:
 
 ```shell
-pnpm anchor-localnet
+yarn anchor-localnet
 ```
 
-#### Run the tests
+#### Run the tests:
 
 ```shell
-pnpm anchor-test
+yarn anchor-test
 ```
 
-#### Deploy to Devnet
+#### Sync the program ID:
 
 ```shell
-pnpm anchor deploy --provider.cluster devnet
+yarn anchor keys sync
 ```
 
-### web
+After syncing, update the program ID in `anchor/src/vesting-exports.ts` to match the new address.
 
-This is a React app that uses the Anchor generated client to interact with the Solana program.
-
-#### Commands
-
-Start the web app
+#### Deploy to Devnet:
 
 ```shell
-pnpm dev
+yarn anchor deploy --provider.cluster devnet
 ```
 
-Build the web app
+### Frontend (Next.js)
+
+#### Start the development server:
 
 ```shell
-pnpm build
+yarn dev
 ```
+
+The app will be available at `http://localhost:3000`
+
+#### Build for production:
+
+```shell
+yarn build
+```
+
+#### Start production server:
+
+```shell
+yarn start
+```
+
+## 🧪 Testing
+
+The project includes comprehensive tests using Bankrun for fast Solana program testing:
+
+```shell
+yarn anchor-test
+```
+
+Test coverage includes:
+- Creating vesting accounts
+- Funding treasury accounts
+- Creating employee vesting schedules
+- Claiming vested tokens
+
+## 📱 Mobile Support
+
+The platform supports mobile wallets through the Solana Mobile Wallet Adapter. Users can connect using:
+- Phantom Mobile
+- Solflare Mobile
+- Other compatible Solana mobile wallets
+
+## 🔐 Security
+
+- All tokens are held in Program-Derived Addresses (PDAs)
+- Smart contract enforces vesting schedules on-chain
+- No centralized control over locked tokens
+- Cliff periods prevent premature token claims
+
+## 🛠️ Tech Stack
+
+**Smart Contract:**
+- Solana Blockchain
+- Anchor Framework 0.31.1
+- Rust
+
+**Frontend:**
+- Next.js 15.5.7
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Solana Wallet Adapter
+- Solana Mobile Wallet Adapter
+- TanStack Query (React Query)
+
+## 📚 Project Structure
+
+```
+token-vesting/
+├── anchor/                    # Solana program
+│   ├── programs/vesting/     # Smart contract source
+│   ├── tests/                # Program tests
+│   └── target/               # Build artifacts
+├── src/
+│   ├── app/                  # Next.js pages
+│   ├── components/           # React components
+│   │   ├── vesting/         # Vesting-specific components
+│   │   ├── account/         # Account management
+│   │   ├── solana/          # Wallet provider
+│   │   └── ui/              # Shared UI components
+│   └── lib/                  # Utility functions
+└── public/                   # Static assets
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🔗 Links
+
+- [Live Demo](https://token-vesting.vercel.app) _(coming soon)_
+- [GitHub Repository](https://github.com/james-eo/token-vesting)
+- [Solana Documentation](https://docs.solana.com)
+- [Anchor Framework](https://www.anchor-lang.com)
+
+## 💡 What is Token Vesting?
+
+Token vesting is a mechanism that locks tokens and releases them gradually over time according to a predetermined schedule. It's commonly used to:
+
+- Incentivize long-term commitment from team members
+- Align interests between investors and project success
+- Prevent market dumping by distributing tokens over time
+- Reward advisors and contributors fairly
+
+**Key Concepts:**
+- **Vesting Period**: The total duration over which tokens unlock
+- **Cliff Period**: An initial period where no tokens are released
+- **Linear Vesting**: Tokens unlock proportionally over time after the cliff
+- **Beneficiary**: The recipient of the vested tokens
