@@ -4,17 +4,20 @@ const steps = [
   {
     step: '01',
     title: 'Create Vesting Account',
-    description: 'Set up a company vesting account with your token mint address. This creates a secure on-chain treasury for your tokens.',
+    description:
+      'Set up a company vesting account with your token mint address. This creates a secure on-chain treasury for your tokens.',
   },
   {
     step: '02',
     title: 'Define Vesting Schedule',
-    description: 'Configure employee vesting schedules with start time, end time, cliff period, and total allocation. Tokens unlock linearly over the vesting period.',
+    description:
+      'Configure employee vesting schedules with start time, end time, cliff period, and total allocation. Tokens unlock linearly over the vesting period.',
   },
   {
     step: '03',
     title: 'Automated Token Release',
-    description: 'Employees can claim their vested tokens as they unlock over time. The smart contract automatically calculates and releases the correct amount.',
+    description:
+      'Employees can claim their vested tokens as they unlock over time. The smart contract automatically calculates and releases the correct amount.',
   },
 ]
 
@@ -40,9 +43,9 @@ export function DashboardFeature() {
             </h1>
 
             <p className="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-300">
-              Token vesting is a mechanism that locks tokens and releases them gradually over time. 
-              It's commonly used to incentivize long-term commitment from team members, advisors, and investors 
-              by distributing tokens according to a predetermined schedule with optional cliff periods.
+              Token vesting is a mechanism that locks tokens and releases them gradually over time. It&apos;s commonly
+              used to incentivize long-term commitment from team members, advisors, and investors by distributing tokens
+              according to a predetermined schedule with optional cliff periods.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -78,9 +81,7 @@ export function DashboardFeature() {
       {/* How it Works Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            How It Works
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">How It Works</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Set up token vesting in three simple steps using our Solana-based smart contract
           </p>

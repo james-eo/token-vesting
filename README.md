@@ -135,7 +135,7 @@ Test coverage includes:
 - Creating employee vesting schedules
 - Claiming vested tokens
 
-## 📱 Mobile Support
+## Mobile Support
 
 The platform supports mobile wallets through the Solana Mobile Wallet Adapter. Users can connect using:
 
@@ -172,7 +172,7 @@ The platform supports mobile wallets through the Solana Mobile Wallet Adapter. U
 
 This project is open source and available under the MIT License.
 
-## 🔗 Links
+## Links
 
 - [Live Demo](https://token-vesting.vercel.app) _(coming soon)_
 - [GitHub Repository](https://github.com/james-eo/token-vesting)
