@@ -174,7 +174,7 @@ This project is open source and available under the MIT License.
 
 ## Links
 
-- [Live Demo](https://token-vesting.vercel.app) _(coming soon)_
+- [Live Demo](https://token-vesting-beta.vercel.app/)
 - [GitHub Repository](https://github.com/james-eo/token-vesting)
 - [Solana Documentation](https://docs.solana.com)
 - [Anchor Framework](https://www.anchor-lang.com)
