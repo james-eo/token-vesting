@@ -2,7 +2,7 @@
 
 A decentralized token vesting platform built on Solana that enables companies to create and manage token vesting schedules for team members, advisors, and investors. The platform provides secure, transparent, and automated token distribution with customizable vesting periods and cliff periods.
 
-## 🌟 Features
+## Features
 
 - **Create Vesting Accounts**: Set up company vesting accounts with custom token mints
 - **Employee Vesting Schedules**: Define vesting schedules with start time, end time, cliff periods, and total allocations
@@ -11,7 +11,7 @@ A decentralized token vesting platform built on Solana that enables companies to
 - **Mobile Wallet Support**: Connect using mobile wallets like Phantom Mobile and Solflare Mobile
 - **Modern UI**: Sleek and responsive interface built with Next.js and Tailwind CSS
 
-## 🏗️ Architecture
+## Architecture
 
 ### Smart Contract (Anchor Program)
 
@@ -22,6 +22,7 @@ The vesting program consists of three main instructions:
 3. **Claim Tokens**: Allows employees to claim their vested tokens as they unlock
 
 **Key Features:**
+
 - Program-Derived Addresses (PDAs) for secure token custody
 - Linear vesting calculation with cliff period support
 - Overflow-safe arithmetic operations
@@ -35,7 +36,7 @@ The vesting program consists of three main instructions:
 - Mobile-first responsive design
 - Dark mode support
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js 18+ or Bun
 - Yarn or npm
@@ -59,7 +60,7 @@ Install dependencies:
 yarn install
 ```
 
-## 🚀 Development
+## Development
 
 ### Smart Contract (Anchor Program)
 
@@ -119,7 +120,7 @@ yarn build
 yarn start
 ```
 
-## 🧪 Testing
+## Testing
 
 The project includes comprehensive tests using Bankrun for fast Solana program testing:
 
@@ -128,6 +129,7 @@ yarn anchor-test
 ```
 
 Test coverage includes:
+
 - Creating vesting accounts
 - Funding treasury accounts
 - Creating employee vesting schedules
@@ -136,57 +138,37 @@ Test coverage includes:
 ## 📱 Mobile Support
 
 The platform supports mobile wallets through the Solana Mobile Wallet Adapter. Users can connect using:
+
 - Phantom Mobile
 - Solflare Mobile
 - Other compatible Solana mobile wallets
 
-## 🔐 Security
+## Security
 
 - All tokens are held in Program-Derived Addresses (PDAs)
 - Smart contract enforces vesting schedules on-chain
 - No centralized control over locked tokens
 - Cliff periods prevent premature token claims
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Smart Contract:**
+
 - Solana Blockchain
 - Anchor Framework 0.31.1
 - Rust
 
 **Frontend:**
+
 - Next.js 15.5.7
 - React 19
 - TypeScript
 - Tailwind CSS v4
 - Solana Wallet Adapter
 - Solana Mobile Wallet Adapter
-- TanStack Query (React Query)
+- Solana Bankrun
 
-## 📚 Project Structure
-
-```
-token-vesting/
-├── anchor/                    # Solana program
-│   ├── programs/vesting/     # Smart contract source
-│   ├── tests/                # Program tests
-│   └── target/               # Build artifacts
-├── src/
-│   ├── app/                  # Next.js pages
-│   ├── components/           # React components
-│   │   ├── vesting/         # Vesting-specific components
-│   │   ├── account/         # Account management
-│   │   ├── solana/          # Wallet provider
-│   │   └── ui/              # Shared UI components
-│   └── lib/                  # Utility functions
-└── public/                   # Static assets
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
 
@@ -197,7 +179,7 @@ This project is open source and available under the MIT License.
 - [Solana Documentation](https://docs.solana.com)
 - [Anchor Framework](https://www.anchor-lang.com)
 
-## 💡 What is Token Vesting?
+## What is Token Vesting?
 
 Token vesting is a mechanism that locks tokens and releases them gradually over time according to a predetermined schedule. It's commonly used to:
 
@@ -207,6 +189,7 @@ Token vesting is a mechanism that locks tokens and releases them gradually over 
 - Reward advisors and contributors fairly
 
 **Key Concepts:**
+
 - **Vesting Period**: The total duration over which tokens unlock
 - **Cliff Period**: An initial period where no tokens are released
 - **Linear Vesting**: Tokens unlock proportionally over time after the cliff
