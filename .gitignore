@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -42,11 +43,35 @@ next-env.d.ts
 
 # Anchor
 /anchor/.anchor
-/anchor/target/debug
-/anchor/target/deploy
-/anchor/target/release
-/anchor/target/sbf-solana-solana
-/anchor/target/test-ledger
-/anchor/target/.rustc_info.json
-test-ledger
+/anchor/target/
+!anchor/target/idl/
+!anchor/target/types/
+test-ledger/
 **/*.rs.bk
+*.so
+*.pdb
+
+# Solana
+.config/
+.cache/
+*.log
+
+# Rust
+Cargo.lock
+/anchor/programs/**/target/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.turbo
